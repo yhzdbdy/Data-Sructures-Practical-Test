@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++: build active file",
+            "type": "shell",
+            "command": "D:/c_study/cbianyi/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Create build directory",
+            "dependsOrder": "sequence",
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds the active C++ source into the workspace build directory."
+        },
+        {
+            "label": "Create build directory",
+            "type": "shell",
+            "command": "if not exist \"${workspaceFolder}\\build\" mkdir \"${workspaceFolder}\\build\"",
+            "problemMatcher": []
+        }
+    ]
+}
