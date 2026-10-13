@@ -36,7 +36,7 @@ int main() {
             int value;
             cin >> index >> value;
             //忽略
-            if(index > n) continue;
+            if(index < 0 || index > n) continue;
             //创建节点
             ListNode* addNode = new ListNode(value);
             //遍历寻找需要插入的位置
