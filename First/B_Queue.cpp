@@ -1,8 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int MAX = 1e5 + 10;
 class Queue{
 public:
+    explicit Queue(int capacity) : myQue(new int[capacity]) {}
+
     //判断是否空队列
     bool empty() {
         return Front == rear;
@@ -15,22 +16,24 @@ public:
     //出队元素
     void pop() {
         if(empty()) {
-            cout << "invalid" << endl;;
+            cout << "invalid" << '\n';
             return;
         }
-        cout << myQue[Front++] << endl;
+        cout << myQue[Front++] << '\n';
     }
 
 private:
     int Front = 0;
     int rear = 0;
-    int myQue[MAX];
+    unique_ptr<int[]> myQue;
 };
 
 int main() {
-    Queue que;
     int n;
-    cin >> n;
+    if (!(cin >> n) || n < 0) {
+        return 0;
+    }
+    Queue que(n);
     for(int i = 0; i < n; i++) {
         int op;
         cin >> op;
