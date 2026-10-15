@@ -3,31 +3,24 @@
     "tasks": [
         {
             "label": "C++: build active file",
-            "type": "shell",
+            "type": "process",
             "command": "D:/c_study/cbianyi/mingw64/bin/g++.exe",
             "args": [
+                "-std=c++17",
                 "-g",
                 "${file}",
                 "-o",
-                "${workspaceFolder}/build/${fileBasenameNoExtension}.exe"
+                "program.exe"
             ],
             "options": {
-                "cwd": "${workspaceFolder}"
+                "cwd": "${fileDirname}"
             },
-            "dependsOn": "Create build directory",
-            "dependsOrder": "sequence",
             "problemMatcher": ["$gcc"],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Builds the active C++ source into the workspace build directory."
-        },
-        {
-            "label": "Create build directory",
-            "type": "shell",
-            "command": "if not exist \"${workspaceFolder}\\build\" mkdir \"${workspaceFolder}\\build\"",
-            "problemMatcher": []
+            "detail": "Builds the active C++ source as program.exe beside the source file."
         }
     ]
 }
