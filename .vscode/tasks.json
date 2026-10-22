@@ -1,26 +1,28 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "C++: build active file",
-            "type": "process",
-            "command": "D:/c_study/cbianyi/mingw64/bin/g++.exe",
-            "args": [
-                "-std=c++17",
-                "-g",
-                "${file}",
-                "-o",
-                "program.exe"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": ["$gcc"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "detail": "Builds the active C++ source as program.exe beside the source file."
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++: build active file",
+      "type": "process",
+      "command": "D:/c_study/cbianyi/mingw64/bin/g++.exe",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "${file}",
+        "-o",
+        "program.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Builds the active C++ source as program.exe beside the source file."
+    }
+  ]
 }

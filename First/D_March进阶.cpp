@@ -10,7 +10,7 @@ bool inIsValid(char op1, char op2)
     p['{'] = 4;
     if (p[op1] < p[op2])
         return true;
-    return false;
+    return false; 
 }
 bool isValid(string &s)
 {
